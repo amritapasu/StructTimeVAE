@@ -1,0 +1,26 @@
+# data
+SDD/
+SDD_embeddings/
+SocialVAE/socialvae_train.log
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# checkpoints / models (ANYWHERE)
+**/ckpt_*/
+**/checkpoints/
+**/*.pt
+**/data
+**/datasets
+
+# logs
+**/events.out.tfevents*
+
+# outputs
+visualizations/
+Untitled/
+
+# system
+.DS_Store

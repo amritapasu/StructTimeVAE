@@ -1,0 +1,7 @@
+# StructTimeVAE
+
+&nbsp;&nbsp;&nbsp;&nbsp;Accurately **predicting pedestrian trajectories** requires accounting for both the uncertainty in human intent and the temporal dynamics of the surrounding environment. Existing approaches either omit scene context or encode it as a single fixed representation, which assumes the scene's influence on an agent is the same throughout the prediction horizon. This assumption is not well-motivated: as a pedestrian moves through a space, the environmental context relevant to their motion changes continuously. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Therefore we propose **StructTimeVAE**, a framework that explicitly structures time into the scene representation by encoding how the scene changes across the observation window and extrapolating those dynamics into the prediction horizon. We do this using two components: a frozen DINOv2 backbone that encodes each observation frame independently, and a recurrent module that unrolls those scene patterns forward into the future. To capture agentic decision-making intent, we train a conditional variational autoencoder (CVAE) on the agent's motion history and the social context of neighboring agents, allowing us to generate multiple plausible trajectories. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Our model is evaluated on the **Stanford Drone Dataset** against scene-free and static-scene ablations, outperforming both to achieve an **ADE<sub>stoch</sub> of 11.25 px** (approximately 0.38 m) and demonstrating that temporal scene modeling improves stochastic trajectory prediction. 
